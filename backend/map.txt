@@ -1,0 +1,2 @@
+mangoDB for database
+python for "speaking to the database"
