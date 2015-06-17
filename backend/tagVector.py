@@ -16,6 +16,7 @@ class globalTag:
         self.tagStrings = tagStrings
         self.tagSet = tagSet
         self.size = size
+
     '''
     update : string -> void
     Requires : Nothing
@@ -38,6 +39,7 @@ class globalTag:
                 + str(self.tagSet[self.tagStrings[i]]) + "\n"
             globalTagData.write(toWrite)
         globalTagData.close()
+
     '''
     stringJoin : string list -> string
     Requires : input is nonempty
@@ -48,7 +50,26 @@ class globalTag:
             return listString[0]
         elif (len(listString) > 1):
             return (listString[0] + "_" + self.stringJoin(listString[1:]))
+    
+    '''
+    distance norms: here are a bunch of distance metrics that will be tested
+    for effectiveness in recommendation systems and the best one will be
+    chosen: some are standard metrics (like Euclidean and Taxicab) and some
+    are based on ad-hoc heuristics. A suitable threshold will be determined.
+    '''
 
+    '''
+    euclidean : (tagVector * tagVector) -> float
+    requires : vector1 and vector2 are valid vectors
+    ensures : returns the euclidean distance between the two
+              tag vectors
+    '''
+    def euclidean(vector1, vector2):
+        euclidAcc = 0
+        for i in range(self.size):
+            euclidAcc += (vector1.retrieve(self.tagStrings[i])\
+                         - vector2.retrieve(self.tagStrings[i])) ** 2
+        return euclidAcc ** 0.5
 
 '''
 tagvector is a class that contains information related to the weight
@@ -57,13 +78,12 @@ to the weights for each user for the tag
 '''
 class tagVector:
     '''
-    '''
-    '''
     __init__, summoned using tagVector() initializes an empty
     dictionary through tagVector().
     '''
     def __init__(self):
         self.diction = {}
+    
     '''
     retrieve : string -> float
     requires : the input string is a valid tag in the global database
