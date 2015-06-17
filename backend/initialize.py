@@ -9,6 +9,12 @@ sizeTagStrings = int(tagSize)
 tagStrings = []
 tagStringSet = {}
 
+def stringJoin(ar):
+	if len(ar)==1:
+		return ar[0]
+	elif len(ar)>1:
+		return ar[0]+"_"+stringJoin(ar[1:])
+
 for i in range(sizeTagStrings):
     stringOnLine = (globalTagData.readline()).split(" ")
     #the line read contains a tag and the number of times it
@@ -25,3 +31,4 @@ globeoftag.update("Mehul")
 globeoftag.update("sjfng")
 globeoftag.update("Mehul Mehul-Mehul")
 globeoftag.update("Preetham Ravi Preethamdeesan")
+globeoftag.update("sid")
