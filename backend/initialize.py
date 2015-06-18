@@ -9,17 +9,11 @@ sizeTagStrings = int(tagSize)
 tagStrings = []
 tagStringSet = {}
 
-def stringJoin(ar):
-	if len(ar)==1:
-		return ar[0]
-	elif len(ar)>1:
-		return ar[0]+"_"+stringJoin(ar[1:])
-
 for i in range(sizeTagStrings):
     stringOnLine = (globalTagData.readline()).split(" ")
     #the line read contains a tag and the number of times it
     #has been typed in
-    stringParse = stringJoin(stringOnLine[0:len(stringOnLine)-1])
+    stringParse = stringOnLine[0]
     tagStringSet[stringParse] = int(stringOnLine[len(stringOnLine)-1])
     tagStrings.append(stringOnLine[0])
 
