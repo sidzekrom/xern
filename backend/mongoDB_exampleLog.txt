@@ -1,0 +1,144 @@
+>>> connection.ravi.jagadeesan.insert_one({'User':'sidzekrom'})
+<pymongo.results.InsertOneResult object at 0x10cfe0280>
+>>> connection.ravi.jagadeesan.insert_one({'User':'geepree21'})
+<pymongo.results.InsertOneResult object at 0x10cfe0230>
+>>> connection.ravi.jagadeesan.insert_one({'User':'prflshankar'})
+<pymongo.results.InsertOneResult object at 0x10cfe0280>
+>>> connection.ravi.jagadeesan.insert_one({'User':'smehul'})
+<pymongo.results.InsertOneResult object at 0x10cfe0230>
+>>> connection.ravi.jagadeesan.find_many('User')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "build/bdist.macosx-10.10-intel/egg/pymongo/collection.py", line 2070, in __call__
+TypeError: 'Collection' object is not callable. If you meant to call the 'find_many' method on a 'Collection' object it is failing because no such method exists.
+>>> connection.ravi.jagadeesan.find_many({'User'})
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "build/bdist.macosx-10.10-intel/egg/pymongo/collection.py", line 2070, in __call__
+TypeError: 'Collection' object is not callable. If you meant to call the 'find_many' method on a 'Collection' object it is failing because no such method exists.
+>>> connection.ravi.jagadeesan.find().'User'
+  File "<stdin>", line 1
+    connection.ravi.jagadeesan.find().'User'
+                                           ^
+SyntaxError: invalid syntax
+>>> connection.ravi.jagadeesan.find()['User']
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "build/bdist.macosx-10.10-intel/egg/pymongo/cursor.py", line 535, in __getitem__
+TypeError: index 'User' cannot be applied to Cursor instances
+>>> for each in connection.ravi.jagadeesan.find():
+...     print each['User']
+... 
+sidzekrom
+geepree21
+prflshankar
+smehul
+>>> for each in connection.ravi.jagadeesan.find():
+...     connection.ravi.jagadeesan.update_one(each, {'interests' : 'Pokemon'})
+... 
+Traceback (most recent call last):
+  File "<stdin>", line 2, in <module>
+  File "build/bdist.macosx-10.10-intel/egg/pymongo/collection.py", line 635, in update_one
+  File "build/bdist.macosx-10.10-intel/egg/pymongo/common.py", line 395, in validate_ok_for_update
+ValueError: update only works with $ operators
+>>>     connection.ravi.jagadeesan.update_one(each, {'$interests' : 'Pokemon'})
+  File "<stdin>", line 1
+    connection.ravi.jagadeesan.update_one(each, {'$interests' : 'Pokemon'})
+    ^
+IndentationError: unexpected indent
+>>> for each in connection.ravi.jagadeesan.find():
+...     connection.ravi.jagadeesan.update_one(each, {'$interests' : 'Pokemon'})
+... 
+Traceback (most recent call last):
+  File "<stdin>", line 2, in <module>
+  File "build/bdist.macosx-10.10-intel/egg/pymongo/collection.py", line 638, in update_one
+  File "build/bdist.macosx-10.10-intel/egg/pymongo/collection.py", line 535, in _update
+  File "build/bdist.macosx-10.10-intel/egg/pymongo/helpers.py", line 261, in _check_write_command_response
+pymongo.errors.WriteError: Unknown modifier: $interests
+>>> diction = {'User' : 'Praful}
+  File "<stdin>", line 1
+    diction = {'User' : 'Praful}
+                               ^
+SyntaxError: EOL while scanning string literal
+>>> diction = {'User' : 'Praful'}
+>>> diction
+{'User': 'Praful'}
+>>> diction['location'] = 'His house'
+>>> act_ddict = {'User':'Praful', 'User':'Preetham'}
+>>> act_ddict
+{'User': 'Preetham'}
+>>> for each in connection.ravi.jagadeesan.find():
+...     print each
+... 
+{u'_id': ObjectId('5583ede803362525d7a8668a'), u'User': u'sidzekrom'}
+{u'_id': ObjectId('5583edee03362525d7a8668b'), u'User': u'geepree21'}
+{u'_id': ObjectId('5583edf903362525d7a8668c'), u'User': u'prflshankar'}
+{u'_id': ObjectId('5583edfe03362525d7a8668d'), u'User': u'smehul'}
+>>> intererst_dict ={'prflshankar':'physics', 'sidzekrom':'pokemaster', 'smehul':'mehulmehul', 'geepree21':'thirupathi'}
+>>> for each in connection.ravi.jagadeesan.find():
+... 
+  File "<stdin>", line 2
+    
+    ^
+IndentationError: expected an indented block
+>>> for each in connection.ravi.jagadeesan.find():
+...     connection.ravi.jagadeesan.update_one(each, {'$set' : {'isUser' : True}})
+... 
+<pymongo.results.UpdateResult object at 0x10cfcaf00>
+<pymongo.results.UpdateResult object at 0x10cfcadc0>
+<pymongo.results.UpdateResult object at 0x10cfcaf00>
+<pymongo.results.UpdateResult object at 0x10cfcadc0>
+>>> for each in connection.ravi.jagadeesan.find():
+...     print each
+... 
+{u'_id': ObjectId('5583edfe03362525d7a8668d'), u'User': u'smehul', u'isUser': True}
+{u'_id': ObjectId('5583ede803362525d7a8668a'), u'User': u'sidzekrom', u'isUser': True}
+{u'_id': ObjectId('5583edee03362525d7a8668b'), u'User': u'geepree21', u'isUser': True}
+{u'_id': ObjectId('5583edf903362525d7a8668c'), u'User': u'prflshankar', u'isUser': True}
+>>> connection.ravi.jagadeesan.update_many({'isUser' : True}, {'$set' : {'Interest' : intererst_dict['geepree21']}})
+<pymongo.results.UpdateResult object at 0x10cfcaf50>
+>>> for each in connection.ravi.jagadeesan.find():
+...     print each
+... 
+{u'_id': ObjectId('5583ede803362525d7a8668a'), u'User': u'sidzekrom', u'Interest': u'thirupathi', u'isUser': True}
+{u'_id': ObjectId('5583edee03362525d7a8668b'), u'User': u'geepree21', u'Interest': u'thirupathi', u'isUser': True}
+{u'_id': ObjectId('5583edf903362525d7a8668c'), u'User': u'prflshankar', u'Interest': u'thirupathi', u'isUser': True}
+{u'_id': ObjectId('5583edfe03362525d7a8668d'), u'User': u'smehul', u'Interest': u'thirupathi', u'isUser': True}
+>>> connection.ravi.jagadeesan['User']
+Collection(Database(MongoClient('localhost', 27017), u'ravi'), u'jagadeesan.User')
+>>> for each in connection.ravi.jagadeesan.find():
+...     print each
+... 
+{u'_id': ObjectId('5583ede803362525d7a8668a'), u'User': u'sidzekrom', u'Interest': u'thirupathi', u'isUser': True}
+{u'_id': ObjectId('5583edee03362525d7a8668b'), u'User': u'geepree21', u'Interest': u'thirupathi', u'isUser': True}
+{u'_id': ObjectId('5583edf903362525d7a8668c'), u'User': u'prflshankar', u'Interest': u'thirupathi', u'isUser': True}
+{u'_id': ObjectId('5583edfe03362525d7a8668d'), u'User': u'smehul', u'Interest': u'thirupathi', u'isUser': True}
+>>> for each in connection.ravi.collection_names()
+  File "<stdin>", line 1
+    for each in connection.ravi.collection_names()
+                                                 ^
+SyntaxError: invalid syntax
+>>> connection.ravi.collection_names()
+[u'jagadeesan', u'system.indexes']
+>>> connection.ravi.jagadeesan
+Collection(Database(MongoClient('localhost', 27017), u'ravi'), u'jagadeesan')
+>>> for each in connection.ravi.jagadeesan.find():
+...     connection.ravi.jagadeesan.update_one(each, {'$set' : {'Interest' : intererst_dict[each['User']]}})
+...     print each
+... 
+<pymongo.results.UpdateResult object at 0x10cfcaf00>
+{u'_id': ObjectId('5583ede803362525d7a8668a'), u'User': u'sidzekrom', u'Interest': u'thirupathi', u'isUser': True}
+<pymongo.results.UpdateResult object at 0x10cfcaf50>
+{u'_id': ObjectId('5583edee03362525d7a8668b'), u'User': u'geepree21', u'Interest': u'thirupathi', u'isUser': True}
+<pymongo.results.UpdateResult object at 0x10cfcaf00>
+{u'_id': ObjectId('5583edf903362525d7a8668c'), u'User': u'prflshankar', u'Interest': u'thirupathi', u'isUser': True}
+<pymongo.results.UpdateResult object at 0x10cfcaf50>
+{u'_id': ObjectId('5583edfe03362525d7a8668d'), u'User': u'smehul', u'Interest': u'thirupathi', u'isUser': True}
+>>> for each in connection.ravi.jagadeesan.find():
+...     print each
+... 
+{u'_id': ObjectId('5583ede803362525d7a8668a'), u'User': u'sidzekrom', u'Interest': u'pokemaster', u'isUser': True}
+{u'_id': ObjectId('5583edee03362525d7a8668b'), u'User': u'geepree21', u'Interest': u'thirupathi', u'isUser': True}
+{u'_id': ObjectId('5583edf903362525d7a8668c'), u'User': u'prflshankar', u'Interest': u'physics', u'isUser': True}
+{u'_id': ObjectId('5583edfe03362525d7a8668d'), u'User': u'smehul', u'Interest': u'mehulmehul', u'isUser': True}
+>>>
