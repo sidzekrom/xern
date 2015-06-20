@@ -32,5 +32,5 @@ class userActions:
        {'$set' : {'Michael Liang' : 'Chimchar'}} 
        That set will be obtained from user input by
        a function like synthesizeUpdateDict in frontend'''
-    def updateUser(self, userID, updateDict) {
+    def updateUser(self, userID, updateDict):
         user_collection.update({"User" : userID}, updateDict)
