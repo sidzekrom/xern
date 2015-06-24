@@ -1,4 +1,6 @@
 from tagVector import *
+from base_class import *
+from database_management import * 
 import sys
 
 globalTagData = open('globalTag.txt', 'r+')
