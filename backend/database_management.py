@@ -1,22 +1,27 @@
 from pymongo import *
 from base_class import *
 
+
 connection = MongoClient() 
 '''
 edit this by giving MongoClient()
 an appropriate argument for the database address on the server
 '''
 
-''' creates a collection named 'userbase' and assigns the variable
-user_database to the created database '''
-user_database = connection.get_database('userbase')
+''' creates a collection named 'xernbase' and assigns the variable
+xern_database to the created database '''
+xern_database = connection.get_database('xernbase')
 
 ''' creates a collection named 'userCollection' and assigns the variable
 user_collection to the created collection '''
-user_collection = user_database.userCollection
+user_collection = xernbase.userCollection
 
 
-class userActions:    
+''' creates a collection named 'tags' and assigns the variable tag_Collection
+to the created collection '''
+tag_collection = xernbase.tagCollection
+
+class globalAction:    
     ''' this class defines actions that can
        be performed on the user database '''
     
@@ -38,3 +43,10 @@ class userActions:
     def updateUser(self, userID, updateDict):
         user_collection.update({"User" : userID}, updateDict)
 
+
+    ''' this adds the general global dictionary of 
+    tags to the collection tag_collection'''
+
+
+    ''' updates tag information updateTag is a dictionary of the form
+        {'$set' : {'title' : '*name*'; 'frequency':*x*} }'''
