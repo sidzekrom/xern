@@ -11,7 +11,7 @@ an appropriate argument for the database address on the server
 
 ''' creates a collection named 'xernbase' and assigns the variable
 xern_database to the created database '''
-xern_database = connection.get_database('xernbase')
+xernbase = connection.get_database('xernbase')
 
 ''' creates a collection named 'userCollection' and assigns the variable
 user_collection to the created collection '''
@@ -42,11 +42,9 @@ class globalAction:
     def updateUser(self, userID, updateDict):
         user_collection.update({"User" : userID}, updateDict)
 
-<<<<<<< HEAD
-
     ''' this adds the general global dictionary of 
     tags to the collection tag_collection'''
-=======
+
     '''
     updateTag : string -> void
     Requires : Nothing
@@ -55,20 +53,20 @@ class globalAction:
     '''
     def updateTag(self, newTag):
         newTag = stringJoin(newTag.split(" "))
-        if (not (newTag in retrieve("tagSet", "tag"))):
-            tagList = retrieve("tagList", "tag").append(newTag)
+        if (not (newTag in mongohelper.retrieve("tagSet", tag_collection))):
+            tagList = mongohelper.retrieve("tagList", tag_collection).\
+            append(newTag)
             tag_collection.update({"Tag" : "TagID"},\
             {"$set" : {"tagList" : tagList}})
-            tagSet = retrieve("tagSet", "tag")
+            tagSet = mongohelper.retrieve("tagSet", tag_collection)
             tagSet[newTag] = 1
             tag_collection.update({"Tag" : "TagID"},\
               {"$set" : {"tagSet" : tagSet}})
-        elif(newTag in self.tagSet):
-            tagSet = retrieve("tagSet", "tag")
+        else:
+            tagSet = mongohelper.retrieve("tagSet", tag_collection)
             tagSet[newTag] += 1
             tag_collection.update({"Tag" : "TagID"},\
               {"$set" : {"tagSet" : tagSet}})
->>>>>>> 3478fcda87ad474789812da0ebd0b13ad399a09d
 
     ''' updates tag information updateTag is a dictionary of the form
         {'$set' : {'title' : '*name*'; 'frequency':*x*} }'''

@@ -73,18 +73,15 @@ def maxMin(vector1, vector2):
 
 ''' helper mongo class to help with the abomination'''
 class mongohelper:
-	''' initialize the connection (eg: conn) and database(eg:xernbase)'''
-	def __init__(self, connection, database):
-		self.database = database
-		self.connection = connection
-
-		''' casually prints all collection (not sure about invoking self)'''
+	''' casually prints all collection (not sure about invoking self)'''
 	def print_collection(self, collection):
-		if query == null:
-			for each in (self.connection).(self.database).collection.find():
-				print (each)
+		collectionList = []
+        for each in collection.find():
+			collectionList.append(each)
+        return collectionList
 
-		''' prints specific quey across database (not sure about the syntax involving self)'''
-	def print_spec(self, collection, query=null):
-		for each in (self.connection).(self.databse).collection.find():
-			print (each[query])
+	''' prints specific quey across database
+        (not sure about the syntax involving self)'''
+	def retrieve(self, collection, query=null):
+		for each in collection.find():
+			return (each[query])
