@@ -16,7 +16,6 @@ xern_database = connection.get_database('xernbase')
 user_collection to the created collection '''
 user_collection = xernbase.userCollection
 
-
 ''' creates a collection named 'tags' and assigns the variable tag_Collection
 to the created collection '''
 tag_collection = xernbase.tagCollection
@@ -27,7 +26,6 @@ class globalAction:
     
     def __init__(self):
         self.usercount = 0
-        self.userDict = {}
 
     ''' adds a user to the database when he/she creates a
        new account '''
@@ -43,10 +41,27 @@ class globalAction:
     def updateUser(self, userID, updateDict):
         user_collection.update({"User" : userID}, updateDict)
 
-
-    ''' this adds the general global dictionary of 
-    tags to the collection tag_collection'''
-
+    '''
+    updateTag : string -> void
+    Requires : Nothing
+    Ensures : updates the globalTag so that newTag
+              is stored as a user accessible tag
+    '''
+    def updateTag(self, newTag):
+        newTag = stringJoin(newTag.split(" "))
+        if (not (newTag in retrieve("tagSet", "tag"))):
+            tagList = retrieve("tagList", "tag").append(newTag)
+            tag_collection.update({"Tag" : "TagID"},\
+            {"$set" : {"tagList" : tagList}})
+            tagSet = retrieve("tagSet", "tag")
+            tagSet[newTag] = 1
+            tag_collection.update({"Tag" : "TagID"},\
+              {"$set" : {"tagSet" : tagSet}})
+        elif(newTag in self.tagSet):
+            tagSet = retrieve("tagSet", "tag")
+            tagSet[newTag] += 1
+            tag_collection.update({"Tag" : "TagID"},\
+              {"$set" : {"tagSet" : tagSet}})
 
     ''' updates tag information updateTag is a dictionary of the form
         {'$set' : {'title' : '*name*'; 'frequency':*x*} }'''
