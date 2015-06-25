@@ -69,3 +69,22 @@ def maxMin(vector1, vector2):
 	maxMinAcc = 0
 	for i in range(self.size):
 		maxMinAcc = max(maxMinAcc, min(vector1[i], vector2[i]))
+
+
+''' helper mongo class to help with the abomination'''
+class mongohelper:
+	''' initialize the connection (eg: conn) and database(eg:xernbase)'''
+	def __init__(self, connection, database):
+		self.database = database
+		self.connection = connection
+
+		''' casually prints all collection (not sure about invoking self)'''
+	def print_collection(self, collection):
+		if query == null:
+			for each in (self.connection).(self.database).collection.find():
+				print (each)
+
+		''' prints specific quey across database (not sure about the syntax involving self)'''
+	def print_spec(self, collection, query=null):
+		for each in (self.connection).(self.databse).collection.find():
+			print (each[query])

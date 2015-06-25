@@ -8,6 +8,7 @@ edit this by giving MongoClient()
 an appropriate argument for the database address on the server
 '''
 
+
 ''' creates a collection named 'xernbase' and assigns the variable
 xern_database to the created database '''
 xern_database = connection.get_database('xernbase')
@@ -46,7 +47,6 @@ class globalAction:
 
     ''' this adds the general global dictionary of 
     tags to the collection tag_collection'''
-
 
     ''' updates tag information updateTag is a dictionary of the form
         {'$set' : {'title' : '*name*'; 'frequency':*x*} }'''
