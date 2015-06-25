@@ -1,0 +1,2 @@
+tags : tagList, which contains a list of all tags
+       tagSet, contains every tag as a key and frequency as value	
