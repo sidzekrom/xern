@@ -67,6 +67,3 @@ class globalAction:
             tagSet[newTag] += 1
             tag_collection.update({"Tag" : "TagID"},\
               {"$set" : {"tagSet" : tagSet}})
-
-    ''' updates tag information updateTag is a dictionary of the form
-        {'$set' : {'title' : '*name*'; 'frequency':*x*} }'''
