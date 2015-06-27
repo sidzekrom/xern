@@ -1,6 +1,6 @@
 from pymongo import *
 from base_class import *
-
+from helperfile import *
 
 connection = MongoClient() 
 '''
@@ -67,3 +67,7 @@ class globalAction:
             tagSet[newTag] += 1
             tag_collection.update({"Tag" : "TagID"},\
               {"$set" : {"tagSet" : tagSet}})
+        tagFreq = mongohelper.retrieve("tagFreq", tag_collection)
+        tagFreq += 1
+        tag_collection.update({"Tag" : "TagID"},\
+            {"$set" : {"tagFreq" : tagFreq}})

@@ -1,6 +1,6 @@
 ''' a file of helper functions that will generally aid in mundane activities of other files '''
 
- '''
+'''
 stringJoin : string list -> string
 Requires : input is nonempty
 Ensures : concatenates elements of the list by underscore ("_")
@@ -11,7 +11,7 @@ def stringJoin(self, listString):
 	elif (len(listString) > 1):
 		return (listString[0] + "_" + self.stringJoin(listString[1:]))
     
-    '''
+'''
     distance norms: here are a bunch of distance metrics that will be tested
     for effectiveness in recommendation systems and the best one will be
     chosen: some are standard metrics (like Euclidean and Manhattan/Taxicab)
@@ -30,14 +30,14 @@ def stringJoin(self, listString):
             is a mild issue when the user is likely to go to an event but
             maxMin is lower than the threshold.
     maxMin exceeds threshold => recommended. Otherwise, switch to other norms
-    '''
+'''
 
-    '''
+'''
     euclidean : (tagVector * tagVector) -> float
     requires : vector1 and vector2 are valid vectors
     ensures : returns the euclidean distance between the two
               tag vectors
-    '''
+'''
 def euclidean(vector1, vector2):
 	euclidAcc = 0
 	for i in range(self.size):
@@ -45,12 +45,12 @@ def euclidean(vector1, vector2):
 		- vector2.retrieve(self.tagStrings[i])) ** 2
 	return euclidAcc ** 0.5
 
-    '''
+'''
     manhattan : (tagVector * tagVector) -> float
     requires : vector1 and vector2 are 2 valid vectors
     ensures: returns the Manhattan distance between the two
              tag vectors (M(v1, v2) = (v11-v21) + ... + (v1n-v2n))
-    '''
+'''
 def manhattan(vector1, vector2):
 	manhattanAcc = 0
 	for i in range(self.size):
@@ -58,13 +58,12 @@ def manhattan(vector1, vector2):
 		vector2.retrieve(self.tagStrings[i]))
 	return manhattanAcc
 
-    '''
+'''
     maxMin : (tagVector * tagVector) -> float
     requires : vector1 and vector2 are valid vectors
     ensures : for each dimension i, take the minimum of vector1[i]
               and vector2[i] and take the maximum across all
-              dimensions
-    '''
+              dimensions '''
 def maxMin(vector1, vector2):
 	maxMinAcc = 0
 	for i in range(self.size):
@@ -73,15 +72,16 @@ def maxMin(vector1, vector2):
 
 ''' helper mongo class to help with the abomination'''
 class mongohelper:
-	''' casually prints all collection (not sure about invoking self)'''
-	def print_collection(self, collection):
-		collectionList = []
+    ''' casually prints all collection (not sure about invoking self)'''
+    def print_collection(self, collection):
+        collectionList = []
         for each in collection.find():
 			collectionList.append(each)
         return collectionList
 
-	''' prints specific quey across database
-        (not sure about the syntax involving self)'''
-	def retrieve(self, collection, query=null):
-		for each in collection.find():
-			return (each[query])
+    ''' prints specific quey across database
+    (not sure about the syntax involving self)
+    '''
+    def retrieve(self, query, collection):
+        for each in collection.find():
+            return (each[query])

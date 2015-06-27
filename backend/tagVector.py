@@ -27,3 +27,5 @@ class tagVector:
         else:
             self.diction[tag] = 1.0 / (float(globalTag.size) ** 0.5)
             return self.diction[tag]
+
+    
