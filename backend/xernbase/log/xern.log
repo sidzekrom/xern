@@ -1,39 +1,26 @@
-2015-06-26T21:21:23.443+0530 I CONTROL  Hotfix KB2731284 or later update is installed, no need to zero-out data files
-2015-06-26T21:21:23.465+0530 I JOURNAL  [initandlisten] journal dir=D:/Xern/xern/backend/xernbase/data\journal
-2015-06-26T21:21:23.465+0530 I JOURNAL  [initandlisten] recover : no journal files present, no recovery needed
-2015-06-26T21:21:24.141+0530 I JOURNAL  [durability] Durability thread started
-2015-06-26T21:21:24.170+0530 I JOURNAL  [journal writer] Journal writer thread started
-2015-06-26T21:21:24.330+0530 I CONTROL  [initandlisten] MongoDB starting : pid=4976 port=27017 dbpath=D:/Xern/xern/backend/xernbase/data 32-bit host=admin-PC
-2015-06-26T21:21:24.330+0530 I CONTROL  [initandlisten] 
-2015-06-26T21:21:24.331+0530 I CONTROL  [initandlisten] ** NOTE: This is a 32 bit MongoDB binary.
-2015-06-26T21:21:24.331+0530 I CONTROL  [initandlisten] **       32 bit builds are limited to less than 2GB of data (or less with --journal).
-2015-06-26T21:21:24.331+0530 I CONTROL  [initandlisten] **       See http://dochub.mongodb.org/core/32bit
-2015-06-26T21:21:24.331+0530 I CONTROL  [initandlisten] 
-2015-06-26T21:21:24.331+0530 I CONTROL  [initandlisten] targetMinOS: Windows XP SP3
-2015-06-26T21:21:24.331+0530 I CONTROL  [initandlisten] db version v3.0.4
-2015-06-26T21:21:24.331+0530 I CONTROL  [initandlisten] git version: 0481c958daeb2969800511e7475dc66986fa9ed5
-2015-06-26T21:21:24.331+0530 I CONTROL  [initandlisten] build info: windows sys.getwindowsversion(major=6, minor=1, build=7601, platform=2, service_pack='Service Pack 1') BOOST_LIB_VERSION=1_49
-2015-06-26T21:21:24.331+0530 I CONTROL  [initandlisten] allocator: tcmalloc
-2015-06-26T21:21:24.331+0530 I CONTROL  [initandlisten] options: { storage: { dbPath: "D:/Xern/xern/backend/xernbase/data", journal: { enabled: true } }, systemLog: { destination: "file", path: "D:/Xern/xern/backend/xernbase/log/xern.log" } }
-2015-06-26T21:21:24.332+0530 I INDEX    [initandlisten] allocating new ns file D:/Xern/xern/backend/xernbase/data\local.ns, filling with zeroes...
-2015-06-26T21:21:24.673+0530 I STORAGE  [FileAllocator] allocating new datafile D:/Xern/xern/backend/xernbase/data\local.0, filling with zeroes...
-2015-06-26T21:21:24.674+0530 I STORAGE  [FileAllocator] creating directory D:/Xern/xern/backend/xernbase/data\_tmp
-2015-06-26T21:21:24.674+0530 I STORAGE  [FileAllocator] done allocating datafile D:/Xern/xern/backend/xernbase/data\local.0, size: 64MB,  took 0 secs
-2015-06-26T21:21:24.828+0530 I NETWORK  [initandlisten] waiting for connections on port 27017
-2015-06-26T21:22:01.150+0530 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:58982 #1 (1 connection now open)
-2015-06-26T21:24:35.351+0530 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:59056 #2 (2 connections now open)
-2015-06-26T21:25:17.936+0530 I NETWORK  [conn2] end connection 127.0.0.1:59056 (1 connection now open)
-2015-06-26T21:25:19.098+0530 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:59074 #3 (2 connections now open)
-2015-06-26T21:25:25.938+0530 I NETWORK  [conn3] end connection 127.0.0.1:59074 (1 connection now open)
-2015-06-26T21:26:36.971+0530 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:59111 #4 (2 connections now open)
-2015-06-26T21:26:37.055+0530 I INDEX    [conn4] allocating new ns file D:/Xern/xern/backend/xernbase/data\preetham.ns, filling with zeroes...
-2015-06-26T21:26:37.375+0530 I STORAGE  [FileAllocator] allocating new datafile D:/Xern/xern/backend/xernbase/data\preetham.0, filling with zeroes...
-2015-06-26T21:26:37.405+0530 I STORAGE  [FileAllocator] done allocating datafile D:/Xern/xern/backend/xernbase/data\preetham.0, size: 64MB,  took 0.001 secs
-2015-06-26T21:26:37.420+0530 I WRITE    [conn4] insert preetham.sidhanth query: { _id: ObjectId('558d7634aeddbf1a54318dbc'), mehul: "mehul", pika: "pika" } ninserted:1 keyUpdates:0 writeConflicts:0 numYields:0 locks:{ Global: { acquireCount: { r: 2, w: 2 } }, MMAPV1Journal: { acquireCount: { w: 8 }, acquireWaitCount: { w: 2 }, timeAcquiringMicros: { w: 323 } }, Database: { acquireCount: { w: 1, W: 1 } }, Collection: { acquireCount: { W: 1 } }, Metadata: { acquireCount: { W: 4 } } } 370ms
-2015-06-26T21:26:37.421+0530 I COMMAND  [conn4] command preetham.$cmd command: insert { insert: "sidhanth", ordered: true, documents: [ { _id: ObjectId('558d7634aeddbf1a54318dbc'), mehul: "mehul", pika: "pika" } ] } keyUpdates:0 writeConflicts:0 numYields:0 reslen:40 locks:{ Global: { acquireCount: { r: 2, w: 2 } }, MMAPV1Journal: { acquireCount: { w: 8 }, acquireWaitCount: { w: 2 }, timeAcquiringMicros: { w: 323 } }, Database: { acquireCount: { w: 1, W: 1 } }, Collection: { acquireCount: { W: 1 } }, Metadata: { acquireCount: { W: 4 } } } 447ms
-2015-06-26T21:26:51.488+0530 I NETWORK  [conn1] end connection 127.0.0.1:58982 (1 connection now open)
-2015-06-26T21:26:51.489+0530 I NETWORK  [conn4] end connection 127.0.0.1:59111 (1 connection now open)
-2015-06-26T21:26:55.544+0530 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:59117 #5 (1 connection now open)
-2015-06-26T21:31:07.338+0530 I NETWORK  [conn5] end connection 127.0.0.1:59117 (0 connections now open)
-2015-06-26T21:31:10.050+0530 I CONTROL  Ctrl-C signal
-2015-06-26T21:31:10.050+0530 I CONTROL  [consoleTerminate] got CTRL_C_EVENT, will terminate after current cmd ends
+2015-06-27T14:01:39.340+0530 W -        [initandlisten] Detected unclean shutdown - ./xernbase/data/mongod.lock is not empty.
+2015-06-27T14:01:39.350+0530 I JOURNAL  [initandlisten] journal dir=./xernbase/data/journal
+2015-06-27T14:01:39.350+0530 I JOURNAL  [initandlisten] recover begin
+2015-06-27T14:01:39.350+0530 I JOURNAL  [initandlisten] recover lsn: 296643
+2015-06-27T14:01:39.350+0530 I JOURNAL  [initandlisten] recover ./xernbase/data/journal/j._0
+2015-06-27T14:01:39.350+0530 I JOURNAL  [initandlisten] recover skipping application of section seq:0 < lsn:296643
+2015-06-27T14:01:39.351+0530 I STORAGE  [initandlisten] recover create file ./xernbase/data/preetham.ns 16MB
+2015-06-27T14:01:39.372+0530 I STORAGE  [initandlisten] recover create file ./xernbase/data/preetham.0 64MB
+2015-06-27T14:01:39.429+0530 I JOURNAL  [initandlisten] recover cleaning up
+2015-06-27T14:01:39.429+0530 I JOURNAL  [initandlisten] removeJournalFiles
+2015-06-27T14:01:39.429+0530 I JOURNAL  [initandlisten] recover done
+2015-06-27T14:01:39.440+0530 I JOURNAL  [durability] Durability thread started
+2015-06-27T14:01:39.440+0530 I JOURNAL  [journal writer] Journal writer thread started
+2015-06-27T14:01:39.440+0530 I CONTROL  [initandlisten] MongoDB starting : pid=4738 port=27017 dbpath=./xernbase/data 64-bit host=Sidhanths-MacBook-Pro-2.local
+2015-06-27T14:01:39.440+0530 I CONTROL  [initandlisten] db version v3.0.4
+2015-06-27T14:01:39.440+0530 I CONTROL  [initandlisten] git version: nogitversion
+2015-06-27T14:01:39.440+0530 I CONTROL  [initandlisten] build info: Darwin yosemitevm.local 14.3.0 Darwin Kernel Version 14.3.0: Mon Mar 23 11:59:05 PDT 2015; root:xnu-2782.20.48~5/RELEASE_X86_64 x86_64 BOOST_LIB_VERSION=1_49
+2015-06-27T14:01:39.440+0530 I CONTROL  [initandlisten] allocator: system
+2015-06-27T14:01:39.440+0530 I CONTROL  [initandlisten] options: { storage: { dbPath: "./xernbase/data" }, systemLog: { destination: "file", path: "./xernbase/log/xern.log" } }
+2015-06-27T14:01:39.467+0530 I NETWORK  [initandlisten] waiting for connections on port 27017
+2015-06-27T14:03:14.143+0530 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:58640 #1 (1 connection now open)
+2015-06-27T14:03:21.430+0530 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:58641 #2 (2 connections now open)
+2015-06-27T14:04:11.216+0530 I NETWORK  [conn1] end connection 127.0.0.1:58640 (1 connection now open)
+2015-06-27T14:04:11.216+0530 I NETWORK  [conn2] end connection 127.0.0.1:58641 (1 connection now open)
+2015-06-27T14:04:17.720+0530 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:58642 #3 (1 connection now open)
+2015-06-27T14:04:18.272+0530 I NETWORK  [conn3] end connection 127.0.0.1:58642 (0 connections now open)
