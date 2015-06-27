@@ -79,9 +79,27 @@ class mongohelper:
 			collectionList.append(each)
         return collectionList
 
-    ''' prints specific quey across database
-    (not sure about the syntax involving self)
+    ''' retrieve the value associated with a query
+        a query is a generalization to a key to allow
+        for nested dictionaries.
+        a key's associated value can be retrieved by a
+        single element list as the query containing the
+        key. if the value associated with a key is a
+        nested dictionary, the rest of the list provides
+        the query for obtaining the value for 
     '''
-    def retrieve(self, query, collection):
-        for each in collection.find():
-            return (each[query])
+    def retrieve(self, query, collection, unique = True, to_search = {}):
+        if (unique):
+            for each in collection.find(to_search):
+                acc = each
+                for i in range(len(query)):
+                    acc = acc[query[i]]
+                return acc
+        else:
+            listAns = []
+            for each in collection.find(to_search):
+                acc = each
+                for i in range(len(query)):
+                    acc = acc[query[i]]
+                listAns.append(acc)
+            return listAns
