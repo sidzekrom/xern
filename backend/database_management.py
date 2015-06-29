@@ -40,12 +40,24 @@ class globalAction:
        That set will be obtained from user input by
        a function like synthesizeUpdateDict in frontend '''
     def updateUser(self, userID, updateDict):
-        user_collection.update({"User" : userID}, updateDict)
+        user_collection.update({"user" : userID}, updateDict)
 
-    ''' this adds the general global dictionary of 
-    tags to the collection tag_collection'''
+    ''' increaseTagWeight : user * tag * int
+        requires : userID is a valid user. Tag already exists in global
+        tag
+        ensures : updates the weight of the desired tag and updates
+                  the total sum of weights'''    
+    def increaseTagWeight (self, userID, tagName, tagIncrement) {
+        tagDict = retrieve(['tags'], user_collection, {"user" : userID})
+        if (tagName not in tagDict):
+            tagDict[tagName] = tagIncrement
+        else:
+            tagDict[tagName] += tagIncrement
+        self.updateUser(userID, {'$set' : {'tags' : tagDict}}
+        tagTotal = retrieve(['tagtotal'], user_collection, {'user'\
+                    : userID}) + tagIncrement
+        self.updateUser(userID, {'$set' : {'tagtotal' : tagTotal}})
 
-    
 
     '''
     updateTag : string -> void
@@ -55,21 +67,21 @@ class globalAction:
     '''
     def updateTag(self, newTag):
         newTag = stringJoin(newTag.split(" "))
-        if (not (newTag in mongohelper.retrieve(["tagSet"], tag_collection))):
-            tagList = mongohelper.retrieve(["tagList"], tag_collection).\
+        if (not (newTag in mongohelper.retrieve(["tagset"], tag_collection))):
+            tagList = mongohelper.retrieve(["taglist"], tag_collection).\
             append(newTag)
-            tag_collection.update({"Tag" : "TagID"},\
-            {"$set" : {"tagList" : tagList}})
-            tagSet = mongohelper.retrieve(["tagSet"], tag_collection)
+            tag_collection.update({"tag" : "tagid"},\
+            {"$set" : {"taglist" : tagList}})
+            tagSet = mongohelper.retrieve(["tagset"], tag_collection)
             tagSet[newTag] = 1
-            tag_collection.update({"Tag" : "TagID"},\
-              {"$set" : {"tagSet" : tagSet}})
+            tag_collection.update({"tag" : "tagid"},\
+              {"$set" : {"tagset" : tagSet}})
         else:
             tagSet = mongohelper.retrieve(["tagSet"], tag_collection)
             tagSet[newTag] += 1
-            tag_collection.update({"Tag" : "TagID"},\
-              {"$set" : {"tagSet" : tagSet}})
-        tagFreq = mongohelper.retrieve(["tagFreq"], tag_collection)
+            tag_collection.update({"tag" : "tagid"},\
+              {"$set" : {"tagset" : tagSet}})
+        tagFreq = mongohelper.retrieve(["tagfreq"], tag_collection)
         tagFreq += 1
-        tag_collection.update({"Tag" : "TagID"},\
-            {"$set" : {"tagFreq" : tagFreq}})
+        tag_collection.update({"tag" : "tagid"},\
+            {"$set" : {"tagfreq" : tagFreq}})

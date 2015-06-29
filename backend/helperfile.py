@@ -86,7 +86,9 @@ class mongohelper:
         single element list as the query containing the
         key. if the value associated with a key is a
         nested dictionary, the rest of the list provides
-        the query for obtaining the value for 
+        the query for obtaining the value desired
+        retrieve : string list * collection * bool * dict -> ans or
+        ans list
     '''
     def retrieve(self, query, collection, unique = True, to_search = {}):
         if (unique):
