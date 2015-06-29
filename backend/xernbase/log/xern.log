@@ -1,0 +1,33 @@
+2015-06-27T16:47:51.291+0530 I CONTROL  Hotfix KB2731284 or later update is installed, no need to zero-out data files
+2015-06-27T16:47:51.453+0530 I JOURNAL  [initandlisten] journal dir=D:/Xern/xern/backend/xernbase/data\journal
+2015-06-27T16:47:51.511+0530 I JOURNAL  [initandlisten] recover : no journal files present, no recovery needed
+2015-06-27T16:47:51.569+0530 I JOURNAL  [durability] Durability thread started
+2015-06-27T16:47:51.589+0530 I JOURNAL  [journal writer] Journal writer thread started
+2015-06-27T16:47:51.685+0530 I CONTROL  [initandlisten] MongoDB starting : pid=9284 port=27017 dbpath=D:/Xern/xern/backend/xernbase/data 32-bit host=admin-PC
+2015-06-27T16:47:51.685+0530 I CONTROL  [initandlisten] 
+2015-06-27T16:47:51.686+0530 I CONTROL  [initandlisten] ** NOTE: This is a 32 bit MongoDB binary.
+2015-06-27T16:47:51.686+0530 I CONTROL  [initandlisten] **       32 bit builds are limited to less than 2GB of data (or less with --journal).
+2015-06-27T16:47:51.687+0530 I CONTROL  [initandlisten] **       See http://dochub.mongodb.org/core/32bit
+2015-06-27T16:47:51.687+0530 I CONTROL  [initandlisten] 
+2015-06-27T16:47:51.687+0530 I CONTROL  [initandlisten] targetMinOS: Windows XP SP3
+2015-06-27T16:47:51.687+0530 I CONTROL  [initandlisten] db version v3.0.4
+2015-06-27T16:47:51.687+0530 I CONTROL  [initandlisten] git version: 0481c958daeb2969800511e7475dc66986fa9ed5
+2015-06-27T16:47:51.687+0530 I CONTROL  [initandlisten] build info: windows sys.getwindowsversion(major=6, minor=1, build=7601, platform=2, service_pack='Service Pack 1') BOOST_LIB_VERSION=1_49
+2015-06-27T16:47:51.688+0530 I CONTROL  [initandlisten] allocator: tcmalloc
+2015-06-27T16:47:51.688+0530 I CONTROL  [initandlisten] options: { storage: { dbPath: "D:/Xern/xern/backend/xernbase/data", journal: { enabled: true } }, systemLog: { destination: "file", path: "D:/Xern/xern/backend/xernbase/log/xern.log" } }
+2015-06-27T16:47:51.764+0530 I INDEX    [initandlisten] allocating new ns file D:/Xern/xern/backend/xernbase/data\local.ns, filling with zeroes...
+2015-06-27T16:47:52.092+0530 I STORAGE  [FileAllocator] allocating new datafile D:/Xern/xern/backend/xernbase/data\local.0, filling with zeroes...
+2015-06-27T16:47:52.093+0530 I STORAGE  [FileAllocator] creating directory D:/Xern/xern/backend/xernbase/data\_tmp
+2015-06-27T16:47:52.148+0530 I STORAGE  [FileAllocator] done allocating datafile D:/Xern/xern/backend/xernbase/data\local.0, size: 64MB,  took 0.011 secs
+2015-06-27T16:47:52.184+0530 I NETWORK  [initandlisten] waiting for connections on port 27017
+2015-06-27T16:48:22.054+0530 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:51081 #1 (1 connection now open)
+2015-06-27T17:09:15.976+0530 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:52270 #2 (2 connections now open)
+2015-06-27T17:09:16.048+0530 I INDEX    [conn2] allocating new ns file D:/Xern/xern/backend/xernbase/data\test.ns, filling with zeroes...
+2015-06-27T17:09:16.386+0530 I STORAGE  [FileAllocator] allocating new datafile D:/Xern/xern/backend/xernbase/data\test.0, filling with zeroes...
+2015-06-27T17:09:16.408+0530 I STORAGE  [FileAllocator] done allocating datafile D:/Xern/xern/backend/xernbase/data\test.0, size: 64MB,  took 0.004 secs
+2015-06-27T17:09:16.447+0530 I WRITE    [conn2] insert test.test_one query: { _id: ObjectId('558e8b63aeddbf0a200a8b52'), DOB: { Year: "1996", Day: 28, Month: "Nov" }, name: "praful" } ninserted:1 keyUpdates:0 writeConflicts:0 numYields:0 locks:{ Global: { acquireCount: { r: 2, w: 2 } }, MMAPV1Journal: { acquireCount: { w: 8 }, acquireWaitCount: { w: 2 }, timeAcquiringMicros: { w: 448 } }, Database: { acquireCount: { w: 1, W: 1 } }, Collection: { acquireCount: { W: 1 } }, Metadata: { acquireCount: { W: 4 } } } 413ms
+2015-06-27T17:09:16.448+0530 I COMMAND  [conn2] command test.$cmd command: insert { insert: "test_one", ordered: true, documents: [ { _id: ObjectId('558e8b63aeddbf0a200a8b52'), DOB: { Year: "1996", Day: 28, Month: "Nov" }, name: "praful" } ] } keyUpdates:0 writeConflicts:0 numYields:0 reslen:40 locks:{ Global: { acquireCount: { r: 2, w: 2 } }, MMAPV1Journal: { acquireCount: { w: 8 }, acquireWaitCount: { w: 2 }, timeAcquiringMicros: { w: 448 } }, Database: { acquireCount: { w: 1, W: 1 } }, Collection: { acquireCount: { W: 1 } }, Metadata: { acquireCount: { W: 4 } } } 449ms
+2015-06-29T16:53:40.889+0530 I NETWORK  [conn2] end connection 127.0.0.1:52270 (1 connection now open)
+2015-06-29T16:53:40.889+0530 I NETWORK  [conn1] end connection 127.0.0.1:51081 (1 connection now open)
+2015-06-29T16:53:46.533+0530 I CONTROL  Ctrl-C signal
+2015-06-29T16:53:46.657+0530 I CONTROL  [consoleTerminate] got CTRL_C_EVENT, will terminate after current cmd ends

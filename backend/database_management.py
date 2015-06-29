@@ -58,7 +58,10 @@ class globalAction:
                     : userID}) + tagIncrement
         self.updateUser(userID, {'$set' : {'tagtotal' : tagTotal}})
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 877ef5c563dd6afa4bf73bce0bac3b42b5508df3
     '''
     updateTag : string -> void
     Requires : Nothing
@@ -67,21 +70,36 @@ class globalAction:
     '''
     def updateTag(self, newTag):
         newTag = stringJoin(newTag.split(" "))
+<<<<<<< HEAD
         if (not (newTag in mongohelper.retrieve(["tagset"], tag_collection))):
             tagList = mongohelper.retrieve(["taglist"], tag_collection).\
             append(newTag)
             tag_collection.update({"tag" : "tagid"},\
             {"$set" : {"taglist" : tagList}})
             tagSet = mongohelper.retrieve(["tagset"], tag_collection)
+=======
+        if (not (newTag in mongohelper.retrieve("tagSet", tag_collection))):
+            tagList = mongohelper.retrieve("tagList", tag_collection).\
+            append(newTag)
+            tag_collection.update({"Tag" : "TagID"},\
+            {"$set" : {"tagList" : tagList}})
+            tagSet = mongohelper.retrieve("tagSet", tag_collection)
+>>>>>>> 877ef5c563dd6afa4bf73bce0bac3b42b5508df3
             tagSet[newTag] = 1
             tag_collection.update({"tag" : "tagid"},\
               {"$set" : {"tagset" : tagSet}})
         else:
-            tagSet = mongohelper.retrieve(["tagSet"], tag_collection)
+            tagSet = mongohelper.retrieve("tagSet", tag_collection)
             tagSet[newTag] += 1
+<<<<<<< HEAD
             tag_collection.update({"tag" : "tagid"},\
               {"$set" : {"tagset" : tagSet}})
         tagFreq = mongohelper.retrieve(["tagfreq"], tag_collection)
+=======
+            tag_collection.update({"Tag" : "TagID"},\
+              {"$set" : {"tagSet" : tagSet}})
+        tagFreq = mongohelper.retrieve("tagFreq", tag_collection)
+>>>>>>> 877ef5c563dd6afa4bf73bce0bac3b42b5508df3
         tagFreq += 1
         tag_collection.update({"tag" : "tagid"},\
             {"$set" : {"tagfreq" : tagFreq}})

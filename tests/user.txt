@@ -1,0 +1,45 @@
+NOTE: lat,long,alt are deined in location class
+
+global locations = *list of locations aggregated from huge groups: ['wheeler55', 'soda121', 'evans101', 'wean6', 'doe', 'gates', 'campanile', 'uc']
+
+global users = ['prflshankar', 'sidzekrom', 'gpree', 'smehul', 'adolin', 'santoshval', 'fmlesh', 'dhanalol']
+
+every local user: ['user']
+
+local users:{
+
+	user1 = 
+	{'user': 'prflshankar'
+	 'first_name': 'praful'
+	 'last_name': 'shankar'
+	 'age': 18
+	 'friends_list': ['sidzekrom', 'gpree', 'smehul', 'dhanalol']
+	 'curr_location': {'lat': (int x), 'long': (int y), 'alt': (int z)}
+	 'courses': ['cs70', 'physics7c', 'cs61b', 'math54']
+	 'interests': ['math', 'cs', 'soccer', 'fifa', 'travel', 'cooking', 'troll_page']
+	 'tags': [*computed values of independent classes. classification and sigmoid*]
+	 'personal_locations': [*list of self-tagged locations*] (eg:[home, samhome, toss])
+	 }
+
+	user2 = 
+	{'user': 'sidzekrom'
+	 'first_name': 'sidhanth'
+	 'last_name': 'mohanty'
+	 'age': 18
+	 'friends_list': ['gpree', 'smehul', 'dhanalol', 'prflshankar']
+	 'curr_location': {'lat': (int x), 'long': (int y), 'alt': (int z)}
+	 'courses': ['cs15210', 'math21235', 'cs15859', 'cs15451']
+	 'interests': ['math', 'cs', 'pokemon', 'stormlight', 'mistborn', 'fantasy']
+	 'tags': [*computed values of independent classes. classification and sigmoid*]
+	 'personal_locations': [*list of self-tagged locations*] (eg:[home, jacobhome, littleasia])
+	 }
+
+	 user3 =
+	 {
+	 'user': 'gpree'
+	 'first_name': 'preetham'
+	 'last_name': 'gunalan'
+	 'age': 18
+	 'friends_list'
+	 }
+}
