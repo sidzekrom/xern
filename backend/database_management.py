@@ -45,8 +45,6 @@ class globalAction:
     ''' this adds the general global dictionary of 
     tags to the collection tag_collection'''
 
-    
-
     '''
     updateTag : string -> void
     Requires : Nothing
@@ -55,21 +53,21 @@ class globalAction:
     '''
     def updateTag(self, newTag):
         newTag = stringJoin(newTag.split(" "))
-        if (not (newTag in mongohelper.retrieve(["tagSet"], tag_collection))):
-            tagList = mongohelper.retrieve(["tagList"], tag_collection).\
+        if (not (newTag in mongohelper.retrieve("tagSet", tag_collection))):
+            tagList = mongohelper.retrieve("tagList", tag_collection).\
             append(newTag)
             tag_collection.update({"Tag" : "TagID"},\
             {"$set" : {"tagList" : tagList}})
-            tagSet = mongohelper.retrieve(["tagSet"], tag_collection)
+            tagSet = mongohelper.retrieve("tagSet", tag_collection)
             tagSet[newTag] = 1
             tag_collection.update({"Tag" : "TagID"},\
               {"$set" : {"tagSet" : tagSet}})
         else:
-            tagSet = mongohelper.retrieve(["tagSet"], tag_collection)
+            tagSet = mongohelper.retrieve("tagSet", tag_collection)
             tagSet[newTag] += 1
             tag_collection.update({"Tag" : "TagID"},\
               {"$set" : {"tagSet" : tagSet}})
-        tagFreq = mongohelper.retrieve(["tagFreq"], tag_collection)
+        tagFreq = mongohelper.retrieve("tagFreq", tag_collection)
         tagFreq += 1
         tag_collection.update({"Tag" : "TagID"},\
             {"$set" : {"tagFreq" : tagFreq}})
