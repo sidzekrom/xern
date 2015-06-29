@@ -45,6 +45,8 @@ class globalAction:
     ''' this adds the general global dictionary of 
     tags to the collection tag_collection'''
 
+    
+
     '''
     updateTag : string -> void
     Requires : Nothing
