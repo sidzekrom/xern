@@ -1,0 +1,54 @@
+\documentclass[11pt]{article}
+
+%%%%%%%%%%%%%% LATEX SAMPLE FILE %%%%%%%%%%%%%%%%
+% A line which starts with a % sign
+% is called a COMMENT. It is IGNORED
+% by the LaTeX processor.
+
+% Include math
+\usepackage{amsmath,amsthm,amssymb}
+% Include links
+\usepackage{hyperref}
+
+%%%%%%%%%%%%%%  PAGE SETUP %%%%%%%%%%%%%%%%%
+% LaTeX has big default margins
+% The following sets them to 1in
+\usepackage[margin=1.5in]{geometry}
+
+% The following sets up some headers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{Xern documentation} % Left Header
+\rhead{\thepage} % Right Header
+\cfoot{} % Center Foot (empty)
+
+% Document content begins here
+\begin{document}
+
+% Set up a title
+\title{Xern documentation}
+\author{Sidhanth Mohanty, Praful Shankar}
+\date{\today}
+\maketitle
+
+\begin{abstract}
+	A list of all functions and what each one does to make it
+	easier to access the codebase.
+\end{abstract}
+
+% This line makes a ToC
+\tableofcontents
+
+\eject
+
+\begin{section}{Backend}
+All the backend stuff given below
+\end{section}
+\begin{section}{tagVector.py}
+The file for all the code related to tagVector functions
+\end{section}
+\begin{section}{tagVector class}
+the tagVector class
+\end{section}
+
+\end{document}
