@@ -1,12 +1,12 @@
-NOTE: lat,long,alt are deined in location class
+#NOTE: lat,long,alt are deined in location class
 
-global locations = *list of locations aggregated from huge groups: ['wheeler55', 'soda121', 'evans101', 'wean6', 'doe', 'gates', 'campanile', 'uc']
+#global locations = *list of locations aggregated from huge groups: ['wheeler55', 'soda121', 'evans101', 'wean6', 'doe', 'gates', 'campanile', 'uc']
 
-global users = ['prflshankar', 'sidzekrom', 'gpree', 'smehul', 'santoshval', 'fmlesh', 'dhanalol', 'adolin']
+#global users = ['prflshankar', 'sidzekrom', 'gpree', 'smehul', 'santoshval', 'fmlesh', 'dhanalol', 'adolin']
 
-every local user: ['user', 'first_name', 'last_name', 'age', 'friends_list', 'curr_location', 'courses', 'interests', 'tags', 'personal_loations']
+#every local user: ['user', 'first_name', 'last_name', 'age', 'friends_list', 'curr_location', 'courses', 'interests', 'tags', 'personal_loations']
 
-local users:{}
+#local users:{}
 
 user1 = {'user': 'prflshankar', 'first_name': 'praful', 'last_name': 'shankar', 'age': 18, 'friends_list': ['sidzekrom', 'smehul', 'dhanalol', 'santoshval'], 'curr_location': {'lat': 'x', 'long': 'y', 'alt':'z'}, 'courses': ['cs70', 'physics7c', 'cs61b', 'math54'], 'interests': ['math', 'cs', 'soccer', 'showdown', 'travel', 'cooking', 'troll_page', 'mun'], 'tags': 'computed values of independent classes classification and sigmoid and their respective key', 'personal_locations': ['list of self-tagged locations']} 
 (eg:[home, samhome, toss])
