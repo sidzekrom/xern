@@ -47,15 +47,14 @@ class globalAction:
         tag
         ensures : updates the weight of the desired tag and updates
                   the total sum of weights'''    
-    def increaseTagWeight (self, userID, tagName, tagIncrement) {
-        tagDict = retrieve(['tags'], user_collection, {"user" : userID})
+    def increaseTagWeight (self, userID, tagName, tagIncrement):
+        tagDict = mongohelper.retrieve(['tags'], user_collection, {"user" : userID})
         if (tagName not in tagDict):
             tagDict[tagName] = tagIncrement
         else:
             tagDict[tagName] += tagIncrement
-        self.updateUser(userID, {'$set' : {'tags' : tagDict}}
-        tagTotal = retrieve(['tagtotal'], user_collection, {'user'\
-                    : userID}) + tagIncrement
+        self.updateUser(userID, {'$set' : {'tags' : tagDict}})
+        tagTotal = mongohelper.retrieve(['tagtotal'], user_collection, {'user': userID}) + tagIncrement
         self.updateUser(userID, {'$set' : {'tagtotal' : tagTotal}})
 
     '''
@@ -87,8 +86,8 @@ class globalAction:
             tag_collection.update({"tag" : "tagid"},\
               {"$set" : {"tagset" : tagSet}})
         tagFreq = mongohelper.retrieve(["tagfreq"], tag_collection)
-            tag_collection.update({"Tag" : "TagID"},\
-              {"$set" : {"tagSet" : tagSet}})
+        tag_collection.update({"Tag" : "TagID"},\
+        {"$set" : {"tagSet" : tagSet}})
         tagFreq = mongohelper.retrieve("tagFreq", tag_collection)
         tagFreq += 1
         tag_collection.update({"tag" : "tagid"},\

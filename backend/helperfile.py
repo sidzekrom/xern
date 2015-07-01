@@ -76,7 +76,7 @@ class mongohelper:
     def print_collection(self, collection):
         collectionList = []
         for each in collection.find():
-			collectionList.append(each)
+            collectionList.append(each)
         return collectionList
 
     ''' retrieve the value associated with a query
