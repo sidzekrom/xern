@@ -1,24 +1,26 @@
 var MongoClient = require('mongodb').MongoClient,
-    assert = require('assert');
+   assert = require('assert');
 
 //connection URL
 xern = 'mongodb://localhost:27017/xernbase'
 
-var arrayToReturn = 2;
+
 /* toFind is a dictionary, toSearch is a collection
     (referred to by its name in a string) */
 
-function setOutput(err, docs) {
-    arrayToReturn = docs;
+function findElem(toSearch, toFind) {
+    var placeholder = 12;
+    MongoClient.connect(xern, function(err, db) {
+        coll = db.collection(toSearch);
+        tempCurs = coll.find(toFind)
+        tempCurs.toArray(function(err, docs) {
+            placeholder = docs;
+        });   
+    });
+    setTimeout(function() {
+        return placeholder;
+    }, 1000);
 }
 
-var findElem = function(toSearch, toFind) {
-                    MongoClient.connect(xern, function (err, db) {
-                        coll = db.collection(toSearch);
-                        tempCurs = coll.find(toFind);
-                        tempCurs.toArray(setOutput);
-                    });
-                    return arrayToReturn;
-               };
-
-console.log(findElem('userCollection', {}));
+var latios = findElem("userCollection", {});
+console.log(latios);
