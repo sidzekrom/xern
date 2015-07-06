@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 2015-07-05T16:36:59.867+0530 I JOURNAL  [initandlisten] journal dir=../backend/xernbase/data/journal
 2015-07-05T16:36:59.868+0530 I JOURNAL  [initandlisten] recover : no journal files present, no recovery needed
 2015-07-05T16:36:59.878+0530 I JOURNAL  [durability] Durability thread started
@@ -1230,3 +1231,45 @@
 2015-07-05T19:09:01.830+0530 I NETWORK  [conn630] end connection 127.0.0.1:51351 (47 connections now open)
 2015-07-05T19:09:01.830+0530 I NETWORK  [conn628] end connection 127.0.0.1:51349 (46 connections now open)
 2015-07-05T19:09:01.830+0530 I NETWORK  [conn629] end connection 127.0.0.1:51350 (45 connections now open)
+=======
+2015-07-01T12:35:06.479+0530 I CONTROL  Hotfix KB2731284 or later update is installed, no need to zero-out data files
+2015-07-01T12:35:06.484+0530 W -        [initandlisten] Detected unclean shutdown - ./backend/xernbase/data\mongod.lock is not empty.
+2015-07-01T12:35:06.499+0530 I JOURNAL  [initandlisten] journal dir=./backend/xernbase/data\journal
+2015-07-01T12:35:06.499+0530 I JOURNAL  [initandlisten] recover begin
+2015-07-01T12:35:06.499+0530 I JOURNAL  [initandlisten] recover lsn: 535772
+2015-07-01T12:35:06.500+0530 I JOURNAL  [initandlisten] recover ./backend/xernbase/data\journal\j._0
+2015-07-01T12:35:06.500+0530 I JOURNAL  [initandlisten] recover skipping application of section seq:0 < lsn:535772
+2015-07-01T12:35:06.512+0530 I STORAGE  [initandlisten] recover create file ./backend/xernbase/data\xernbase.ns 16MB
+2015-07-01T12:35:06.825+0530 I STORAGE  [initandlisten] recover create file ./backend/xernbase/data\xernbase.0 64MB
+2015-07-01T12:35:08.861+0530 I JOURNAL  [initandlisten] recover cleaning up
+2015-07-01T12:35:08.862+0530 I JOURNAL  [initandlisten] removeJournalFiles
+2015-07-01T12:35:08.863+0530 I JOURNAL  [initandlisten] recover done
+2015-07-01T12:35:08.911+0530 I JOURNAL  [durability] Durability thread started
+2015-07-01T12:35:08.913+0530 I JOURNAL  [journal writer] Journal writer thread started
+2015-07-01T12:35:09.021+0530 I CONTROL  [initandlisten] MongoDB starting : pid=5660 port=27017 dbpath=./backend/xernbase/data 32-bit host=admin-PC
+2015-07-01T12:35:09.022+0530 I CONTROL  [initandlisten] 
+2015-07-01T12:35:09.022+0530 I CONTROL  [initandlisten] ** NOTE: This is a 32 bit MongoDB binary.
+2015-07-01T12:35:09.022+0530 I CONTROL  [initandlisten] **       32 bit builds are limited to less than 2GB of data (or less with --journal).
+2015-07-01T12:35:09.022+0530 I CONTROL  [initandlisten] **       See http://dochub.mongodb.org/core/32bit
+2015-07-01T12:35:09.022+0530 I CONTROL  [initandlisten] 
+2015-07-01T12:35:09.022+0530 I CONTROL  [initandlisten] targetMinOS: Windows XP SP3
+2015-07-01T12:35:09.022+0530 I CONTROL  [initandlisten] db version v3.0.4
+2015-07-01T12:35:09.022+0530 I CONTROL  [initandlisten] git version: 0481c958daeb2969800511e7475dc66986fa9ed5
+2015-07-01T12:35:09.023+0530 I CONTROL  [initandlisten] build info: windows sys.getwindowsversion(major=6, minor=1, build=7601, platform=2, service_pack='Service Pack 1') BOOST_LIB_VERSION=1_49
+2015-07-01T12:35:09.023+0530 I CONTROL  [initandlisten] allocator: tcmalloc
+2015-07-01T12:35:09.023+0530 I CONTROL  [initandlisten] options: { storage: { dbPath: "./backend/xernbase/data", journal: { enabled: true } }, systemLog: { destination: "file", path: "./backend/xernbase/log/xern.log" } }
+2015-07-01T12:35:10.035+0530 I NETWORK  [initandlisten] waiting for connections on port 27017
+2015-07-01T12:35:15.152+0530 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:53910 #1 (1 connection now open)
+2015-07-01T12:35:50.861+0530 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:53929 #2 (2 connections now open)
+2015-07-01T12:38:06.828+0530 I NETWORK  [conn1] end connection 127.0.0.1:53910 (1 connection now open)
+2015-07-01T12:38:06.829+0530 I NETWORK  [conn2] end connection 127.0.0.1:53929 (0 connections now open)
+2015-07-01T12:38:08.345+0530 I CONTROL  Ctrl-C signal
+2015-07-01T12:38:08.345+0530 I CONTROL  [consoleTerminate] got CTRL_C_EVENT, will terminate after current cmd ends
+2015-07-01T12:38:08.345+0530 I CONTROL  [consoleTerminate] now exiting
+2015-07-01T12:38:08.345+0530 I NETWORK  [consoleTerminate] shutdown: going to close listening sockets...
+2015-07-01T12:38:08.345+0530 I NETWORK  [consoleTerminate] closing listening socket: 408
+2015-07-01T12:38:08.346+0530 I NETWORK  [consoleTerminate] shutdown: going to flush diaglog...
+2015-07-01T12:38:08.346+0530 I NETWORK  [consoleTerminate] shutdown: going to close sockets...
+2015-07-01T12:38:08.346+0530 I STORAGE  [consoleTerminate] shutdown: waiting for fs preallocator...
+2015-07-01T12:38:08.346+0530 I STORAGE  [consoleTerminate] shutdown: final commit...
+>>>>>>> 91288217393ca320ea3a552fe4e3120315b996ed
