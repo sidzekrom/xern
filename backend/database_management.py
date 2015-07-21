@@ -8,7 +8,6 @@ edit this by giving MongoClient()
 an appropriate argument for the database address on the server
 '''
 
-
 ''' creates a collection named 'xernbase' and assigns the variable
 xern_database to the created database '''
 xernbase = connection.get_database('xernbase')
@@ -20,6 +19,9 @@ user_collection = xernbase.userCollection
 ''' creates a collection named 'tags' and assigns the variable tag_Collection
 to the created collection '''
 tag_collection = xernbase.tagCollection
+
+#locations have a tree like hierarchy, where 
+location_collection = xernbase.locationCollection
 
 class globalAction:    
     ''' this class defines actions that can
@@ -40,7 +42,7 @@ class globalAction:
        That set will be obtained from user input by
        a function like synthesizeUpdateDict in frontend '''
     def updateUser(self, userID, updateDict):
-        user_collection.update({"user" : userID}, updateDict)
+        user_collection.update({'user' : userID}, updateDict)
 
     ''' increaseTagWeight : user * tag * int
         requires : userID is a valid user. Tag already exists in global
@@ -48,14 +50,20 @@ class globalAction:
         ensures : updates the weight of the desired tag and updates
                   the total sum of weights'''    
     def increaseTagWeight (self, userID, tagName, tagIncrement):
-        tagDict = mongohelper.retrieve(['tags'], user_collection, {"user" : userID})
+        tagDict = mongohelper.retrieve(['tags'], user_collection, {'user' : userID})
         if (tagName not in tagDict):
             tagDict[tagName] = tagIncrement
         else:
             tagDict[tagName] += tagIncrement
         self.updateUser(userID, {'$set' : {'tags' : tagDict}})
-        tagTotal = mongohelper.retrieve(['tagtotal'], user_collection, {'user': userID}) + tagIncrement
-        self.updateUser(userID, {'$set' : {'tagtotal' : tagTotal}})
+        tagTotal = mongohelper.retrieve(['tagtotal'], user_collection,\
+            {'user': userID}) + tagIncrement
+        #tagTotal2 is the sum of squares of each tag. The formula I
+        #have used is a straightforward derivation from a^2 - b^2 = (a+b)(a-b)
+        tagTotal2 = mongohelper.retrieve(['tagtotal2'], user_collection,\
+            {'user': userID}) + (2 * tagDict - tagIncrement) * tagIncrement
+        self.updateUser(userID, {'$set' : {'tagtotal' : tagTotal,\
+                                        'tagtotal2' : tagTotal2}})
 
     '''
     updateTag : string -> void
@@ -92,3 +100,5 @@ class globalAction:
         tagFreq += 1
         tag_collection.update({"tag" : "tagid"},\
             {"$set" : {"tagfreq" : tagFreq}})
+
+actionInst = globalAction()

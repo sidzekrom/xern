@@ -71,7 +71,8 @@ def maxMin(vector1, vector2):
 
 
 ''' helper mongo class to help with the abomination'''
-class mongohelper:
+class mongoHelper:
+    
     ''' casually prints all collection (not sure about invoking self)'''
     def print_collection(self, collection):
         collectionList = []
@@ -105,3 +106,5 @@ class mongohelper:
                     acc = acc[query[i]]
                 listAns.append(acc)
             return listAns
+
+mongohelper = mongoHelper()
