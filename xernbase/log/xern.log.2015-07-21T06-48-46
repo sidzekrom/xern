@@ -1,0 +1,2 @@
+2015-07-21T12:18:33.064+0530 I STORAGE  [initandlisten] exception in initAndListen: 98 Unable to create/open lock file: ../xernbase/data/mongod.lock errno:13 Permission denied Is a mongod instance already running?, terminating
+2015-07-21T12:18:33.064+0530 I CONTROL  [initandlisten] dbexit:  rc: 100

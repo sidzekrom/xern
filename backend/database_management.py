@@ -10,7 +10,7 @@ an appropriate argument for the database address on the server
 
 ''' creates a collection named 'xernbase' and assigns the variable
 xern_database to the created database '''
-xernbase = connection.get_database('xernbase')
+xernbase = connection.xernbase
 
 ''' creates a collection named 'userCollection' and assigns the variable
 user_collection to the created collection '''

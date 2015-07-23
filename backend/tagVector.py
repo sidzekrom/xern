@@ -33,7 +33,7 @@ class tagVector:
         acc = 0
         for tag in vector1tags:
             acc = max(acc, min(float(vector1[tag])/\
-                float(v1tot), float(vector2[tag)/\
+                float(v1tot), float(vector2[tag])/\
                 float(v2tot)))
         return acc
 
