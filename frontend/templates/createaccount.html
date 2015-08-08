@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title> Sign up for Xern </title>
+    </head>
+    <body>
+    <div class = "container">
+        <h1> Enter your credentials </h1>
+            <form action = "" method = "post">
+                <input type = "text" placeholder = "Username"
+                name = "username" value = "{{request.form.username">
+                <br>
+                <input type = "password" placeholder = "Password"
+                name = "password" value = "{{request.form.password">
+                <br>
+                <input type = "email" placeholder = "Email Address"
+                name = "emailid" value = "{{request.form.emailid}}">
+                <br>
+                <input class = "btn btn-default" value = "Register"
+                type = "submit">
+            </form>
+    </div>
+    </body>
+</html>

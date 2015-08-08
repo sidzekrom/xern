@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title> Log in to Xern </title>
+    </head>
+    <body>
+        <div class = "container">
+            <h1>Enter your credentials</h1>
+            <br>
+            <form action = "" method = "post">
+                <input type = "text" placeholder = "Username" name = "username"
+                    value = "{{request.form.username}}">
+                <input type = "password" placeholder = "Password"
+                    name = "password" value = "{{request.form.password}}">
+                <input class = "btn btn-default" type = "submit" value =
+                "Login">
+                <input class = "btn btn-default" type = "submit" value =
+                "Create New Account">
+            </form>
+            <p class = "error"><strong>Error:</strong> {{error}}
+        </div>
+    </body>
+</html>
