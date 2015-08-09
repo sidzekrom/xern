@@ -34,7 +34,7 @@ class globalAction:
        new account '''
     def addUser(self, userDict):
         self.usercount += 1
-        user_collection.insert_one(userDict)
+        user_collection.insert(userDict)
     
     ''' updates arbitrary user information
        updateDict is a dictionary of the form
@@ -64,6 +64,18 @@ class globalAction:
             {'user': userID}) + (2 * tagDict - tagIncrement) * tagIncrement
         self.updateUser(userID, {'$set' : {'tagtotal' : tagTotal,\
                                         'tagtotal2' : tagTotal2}})
+
+    '''
+    userExists : string -> bool
+    Specs: This function checks whether a person with the given username
+           exists.
+    '''
+    def userExists(self, userid):
+        person = user_collection.find_one({'user' : userid})
+        if (person == None):
+            return False
+        else:
+            return True
 
     '''
     updateTag : string -> void

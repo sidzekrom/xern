@@ -1,0 +1,52 @@
+2015-08-08T20:45:48.945+0530 I JOURNAL  [initandlisten] journal dir=../xernbase/data/journal
+2015-08-08T20:45:48.945+0530 I JOURNAL  [initandlisten] recover : no journal files present, no recovery needed
+2015-08-08T20:45:48.956+0530 I JOURNAL  [durability] Durability thread started
+2015-08-08T20:45:48.956+0530 I CONTROL  [initandlisten] MongoDB starting : pid=13050 port=27017 dbpath=../xernbase/data 64-bit host=Sidhanths-MacBook-Pro-2.local
+2015-08-08T20:45:48.956+0530 I JOURNAL  [journal writer] Journal writer thread started
+2015-08-08T20:45:48.956+0530 I CONTROL  [initandlisten] ** WARNING: You are running this process as the root user, which is not recommended.
+2015-08-08T20:45:48.956+0530 I CONTROL  [initandlisten] 
+2015-08-08T20:45:48.956+0530 I CONTROL  [initandlisten] 
+2015-08-08T20:45:48.956+0530 I CONTROL  [initandlisten] ** WARNING: soft rlimits too low. Number of files is 256, should be at least 1000
+2015-08-08T20:45:48.956+0530 I CONTROL  [initandlisten] db version v3.0.4
+2015-08-08T20:45:48.956+0530 I CONTROL  [initandlisten] git version: nogitversion
+2015-08-08T20:45:48.956+0530 I CONTROL  [initandlisten] build info: Darwin yosemitevm.local 14.3.0 Darwin Kernel Version 14.3.0: Mon Mar 23 11:59:05 PDT 2015; root:xnu-2782.20.48~5/RELEASE_X86_64 x86_64 BOOST_LIB_VERSION=1_49
+2015-08-08T20:45:48.956+0530 I CONTROL  [initandlisten] allocator: system
+2015-08-08T20:45:48.956+0530 I CONTROL  [initandlisten] options: { storage: { dbPath: "../xernbase/data" }, systemLog: { destination: "file", path: "../xernbase/log/xern.log" } }
+2015-08-08T20:45:49.078+0530 I NETWORK  [initandlisten] waiting for connections on port 27017
+2015-08-08T20:45:52.462+0530 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:50032 #1 (1 connection now open)
+2015-08-08T20:45:52.469+0530 I NETWORK  [conn1] end connection 127.0.0.1:50032 (0 connections now open)
+2015-08-08T20:46:03.114+0530 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:50033 #2 (1 connection now open)
+2015-08-08T20:46:53.635+0530 I NETWORK  [conn2] end connection 127.0.0.1:50033 (0 connections now open)
+2015-08-08T20:47:33.078+0530 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:50041 #3 (1 connection now open)
+2015-08-08T20:47:54.369+0530 I NETWORK  [conn3] end connection 127.0.0.1:50041 (0 connections now open)
+2015-08-08T20:48:09.783+0530 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:50045 #4 (1 connection now open)
+2015-08-08T20:48:42.982+0530 I NETWORK  [conn4] end connection 127.0.0.1:50045 (0 connections now open)
+2015-08-08T20:55:59.097+0530 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:50137 #5 (1 connection now open)
+2015-08-08T20:55:59.302+0530 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:50138 #6 (2 connections now open)
+2015-08-08T20:56:31.668+0530 I NETWORK  [conn6] end connection 127.0.0.1:50138 (1 connection now open)
+2015-08-08T20:56:31.678+0530 I NETWORK  [conn5] end connection 127.0.0.1:50137 (0 connections now open)
+2015-08-08T21:04:54.849+0530 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:50159 #7 (1 connection now open)
+2015-08-08T21:04:55.031+0530 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:50160 #8 (2 connections now open)
+2015-08-08T21:06:03.783+0530 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:50172 #9 (3 connections now open)
+2015-08-08T22:40:32.689+0530 I NETWORK  [conn7] end connection 127.0.0.1:50159 (2 connections now open)
+2015-08-08T22:40:32.689+0530 I NETWORK  [conn8] end connection 127.0.0.1:50160 (2 connections now open)
+2015-08-09T02:20:07.634+0530 I CONTROL  [signalProcessingThread] got signal 2 (Interrupt: 2), will terminate after current cmd ends
+2015-08-09T02:20:07.638+0530 I CONTROL  [signalProcessingThread] now exiting
+2015-08-09T02:20:07.638+0530 I NETWORK  [signalProcessingThread] shutdown: going to close listening sockets...
+2015-08-09T02:20:07.638+0530 I NETWORK  [signalProcessingThread] closing listening socket: 6
+2015-08-09T02:20:07.638+0530 I NETWORK  [signalProcessingThread] closing listening socket: 7
+2015-08-09T02:20:07.639+0530 I NETWORK  [signalProcessingThread] removing socket file: /tmp/mongodb-27017.sock
+2015-08-09T02:20:07.639+0530 I NETWORK  [signalProcessingThread] shutdown: going to flush diaglog...
+2015-08-09T02:20:07.639+0530 I NETWORK  [signalProcessingThread] shutdown: going to close sockets...
+2015-08-09T02:20:07.639+0530 I STORAGE  [signalProcessingThread] shutdown: waiting for fs preallocator...
+2015-08-09T02:20:07.640+0530 I STORAGE  [signalProcessingThread] shutdown: final commit...
+2015-08-09T02:20:07.640+0530 I NETWORK  [conn9] end connection 127.0.0.1:50172 (0 connections now open)
+2015-08-09T02:20:07.644+0530 I JOURNAL  [signalProcessingThread] journalCleanup...
+2015-08-09T02:20:07.644+0530 I JOURNAL  [signalProcessingThread] removeJournalFiles
+2015-08-09T02:20:07.646+0530 I JOURNAL  [signalProcessingThread] Terminating durability thread ...
+2015-08-09T02:20:07.751+0530 I JOURNAL  [journal writer] Journal writer thread stopped
+2015-08-09T02:20:07.751+0530 I JOURNAL  [durability] Durability thread stopped
+2015-08-09T02:20:07.752+0530 I STORAGE  [signalProcessingThread] shutdown: closing all files...
+2015-08-09T02:20:07.754+0530 I STORAGE  [signalProcessingThread] closeAllFiles() finished
+2015-08-09T02:20:07.754+0530 I STORAGE  [signalProcessingThread] shutdown: removing fs lock...
+2015-08-09T02:20:07.755+0530 I CONTROL  [signalProcessingThread] dbexit:  rc: 0
