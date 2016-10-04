@@ -1,2 +1,3 @@
 # xern
-All of Xern
+
+Indoor location services using WiFi
